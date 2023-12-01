@@ -1,0 +1,145 @@
+#root {
+    width: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.page-left {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    gap: 1rem;
+
+    padding-top: 3rem;
+
+    height: 100vh;
+
+    background: linear-gradient(to right, #282828, #232323);
+    filter:drop-shadow(0 0 .5rem rgba(0, 0, 0, 0.28));
+}
+
+.page-right {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+.page-right__header {
+    background-color: rgba(66, 66, 66, 0.26);
+    width: 100%;
+    text-align: center;
+}
+
+.page-right__task-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 2rem
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+
+    background: radial-gradient(circle, #3a3a3a, #3f3f3f);
+    filter:drop-shadow(0 0 .5rem rgba(0, 0, 0, 0.28));
+
+    border-radius: 0.6rem;
+
+    padding: 1rem;
+
+    gap: 1rem;
+
+    width: 12rem;
+    height: 12rem;
+}
+
+.task-edit{
+    display:flex;
+    flex-direction: column;
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+
+    width: 16rem;
+    height: 16rem;
+
+    border-radius: 0.6rem;
+    padding: 1rem;
+    gap: 1rem;
+
+    background: radial-gradient(circle, #8c8c8c, #c0c0c0);
+}
+
+.task-edit__input-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+}
+
+.task-edit__input{
+    font-size: 2rem;
+}
+
+.task__name-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    height: 5rem;
+    max-width: 90%;
+    overflow-wrap: break-word;
+}
+
+.task__name{
+    max-width: 100%;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.task__checkbox-wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    font-weight: bolder;
+
+    margin-top: auto;
+}
+
+.task__checkbox{
+    width: 1rem;
+    border-style: none;
+    margin-right: 1rem;
+}
+
+.page-top__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.task__btn-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top:auto;
+}
+
+.task__btn{
+    padding: 0.2rem 0.4rem;
+    width: 4.5rem;
+}
