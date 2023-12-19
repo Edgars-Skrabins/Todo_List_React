@@ -2,14 +2,21 @@ import React, {useState} from 'react'
 import './App.css'
 import Task from "./components/task.tsx";
 import EditDialog from "./components/editDialog.tsx";
-import task from "./components/task.tsx";
+
+type Car = {
+    id:number;
+    name:string;
+    image:string;
+}
 
 function App() {
 
     const [taskName, setTaskName] = useState("");
     const [tasks, setTasks] = useState<React.ReactNode[]>([]);
+    const [cars, setCars] = useState<Car[]>([]);
     const [editDialogs, setEditDialogs] = useState<React.ReactNode[]>([]);
-    const [inEditMode, setInEditMode] = useState(Boolean);
+    const [inEditMode, setInEditMode] = useState(false);
+
 
 
     function deleteAllTasks()
@@ -67,6 +74,26 @@ function App() {
 
     return (
         <>
+            <button onClick={() => {
+                const clonedCarsArr = [...cars];
+
+                clonedCarsArr.push({
+                    id: Math.random(),
+                    image: "https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Hyundai-Grand-i10-Nios-200120231541.jpg",
+                    name: "Hyundai",
+                })
+
+                setCars(clonedCarsArr);
+
+            }}> Add Car </button>
+
+            {cars.map(({id,image,name}) => (
+                <div key={id}>
+                    <img src={image} alt={name} width={100}/>
+                    <h3>{name}</h3>
+                </div>
+            ))}
+
             <div className="page-container">
                 <div className="page-left">
                     <div className="page-top__input-wrapper">
